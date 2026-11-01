@@ -1,0 +1,531 @@
+/* ==========================================================================
+   Voice Portfolio - Apple Intelligence & Frosted Glass Design System (Option A)
+   Aesthetic: Luminous Pastel Atmosphere, Soaring Eagle Banner, Frosted Glass, Wispr Flow Voice Pod
+   ========================================================================== */
+
+:root {
+  --bg-light: #f6f8fc;
+  --bg-card: rgba(255, 255, 255, 0.82);
+  --bg-card-hover: rgba(255, 255, 255, 0.96);
+  --border-subtle: rgba(226, 232, 240, 0.9);
+  --border-glow: rgba(59, 130, 246, 0.5);
+  --accent-cyan: #0284c7;
+  --accent-blue: #2563eb;
+  --accent-indigo: #4f46e5;
+  --accent-purple: #7c3aed;
+  --accent-emerald: #059669;
+  --accent-gold: #c28828;
+  --text-main: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 12% 16%, rgba(219, 234, 254, 0.75) 0%, transparent 40%),
+    radial-gradient(circle at 88% 20%, rgba(254, 243, 199, 0.65) 0%, transparent 45%),
+    radial-gradient(circle at 50% 70%, rgba(224, 242, 254, 0.6) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(253, 230, 138, 0.45) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* --------------------------------------------------------------------------
+   Eagle Banner Background Header
+   -------------------------------------------------------------------------- */
+.eagle-banner-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 380px;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.eagle-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.85;
+  filter: saturate(1.15) brightness(1.02);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 65%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 65%, rgba(0,0,0,0) 100%);
+}
+
+.motto-gold-text {
+  font-family: "Cinzel", "Georgia", "Times New Roman", serif;
+  color: #c98a2c;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 2px 6px rgba(217, 119, 6, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Squircle Avatar Card (Option A Mockup Match)
+   -------------------------------------------------------------------------- */
+.avatar-squircle-card {
+  width: 112px;
+  height: 112px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  padding: 4px;
+  box-shadow: 
+    0 16px 36px -10px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset,
+    0 4px 14px rgba(99, 102, 241, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.avatar-squircle-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 42px -10px rgba(37, 99, 235, 0.22);
+}
+
+.avatar-squircle-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Hero Badge Pills */
+.hero-badge-pill {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(203, 213, 225, 0.85);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #334155;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.hero-badge-pill:hover {
+  background: #ffffff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+/* Hero Decorative Dot Grid */
+.hero-dot-grid {
+  width: 88px;
+  height: 44px;
+  background-image: radial-gradient(#94a3b8 1.5px, transparent 1.5px);
+  background-size: 9px 9px;
+  opacity: 0.45;
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: "Start Chat" Voice Pod Card (Wispr Flow / Siri Style)
+   -------------------------------------------------------------------------- */
+.voice-chat-pod {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 28px;
+  box-shadow: 
+    0 25px 60px -15px rgba(59, 130, 246, 0.14),
+    0 8px 24px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.voice-chat-pod:hover {
+  box-shadow: 0 32px 70px -15px rgba(59, 130, 246, 0.22);
+}
+
+/* Iridescent Siri Wave Background Area */
+.wave-visual-container {
+  position: relative;
+  width: 100%;
+  height: 124px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.iridescent-wave-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+/* Luminous Center Microphone Button */
+.mic-wrapper-vibrant {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.mic-btn-vibrant {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #4f46e5 100%);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.42), inset 0 2px 4px rgba(255, 255, 255, 0.45);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.mic-btn-vibrant:hover {
+  transform: scale(1.08);
+  box-shadow: 0 14px 38px rgba(37, 99, 235, 0.58), inset 0 2px 5px rgba(255, 255, 255, 0.6);
+}
+
+.mic-btn-vibrant:active {
+  transform: scale(0.96);
+}
+
+/* Glowing Halo Ring */
+.mic-halo-vibrant {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid rgba(56, 189, 248, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mic-btn-vibrant.listening {
+  background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+  box-shadow: 0 10px 35px rgba(239, 68, 68, 0.6);
+}
+
+.mic-btn-vibrant.listening ~ .mic-halo-vibrant {
+  opacity: 1;
+  animation: halo-pulse-listening 1.8s infinite ease-out;
+}
+
+.mic-btn-vibrant.speaking {
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  box-shadow: 0 10px 35px rgba(16, 185, 129, 0.6);
+}
+
+.mic-btn-vibrant.speaking ~ .mic-halo-vibrant {
+  opacity: 1;
+  animation: halo-pulse-speaking 1.8s infinite ease-out;
+}
+
+@keyframes halo-pulse-listening {
+  0% { width: 68px; height: 68px; opacity: 0.9; border-color: rgba(239, 68, 68, 0.7); }
+  100% { width: 110px; height: 110px; opacity: 0; border-color: rgba(239, 68, 68, 0); }
+}
+
+@keyframes halo-pulse-speaking {
+  0% { width: 68px; height: 68px; opacity: 0.9; border-color: rgba(56, 189, 248, 0.7); }
+  100% { width: 105px; height: 105px; opacity: 0; border-color: rgba(56, 189, 248, 0); }
+}
+
+/* --------------------------------------------------------------------------
+   Story Starter Pills Row (Option A Mockup Match)
+   -------------------------------------------------------------------------- */
+.story-starter-scroll-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 6px 2px 14px 2px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+}
+
+.story-starter-scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.story-starter-pill {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 9999px;
+  padding: 8px 18px;
+  font-size: 0.81rem;
+  font-weight: 500;
+  color: #1e293b;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-starter-pill:hover {
+  background: #ffffff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.15);
+}
+
+.story-starter-pill:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   Live Speech Transcript Pill
+   -------------------------------------------------------------------------- */
+.live-speech-pill {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  backdrop-filter: blur(18px);
+  border-radius: 9999px;
+  padding: 6px 16px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #1e293b;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.karaoke-active-word {
+  color: #2563eb;
+  font-weight: 700;
+  background: rgba(37, 99, 235, 0.12);
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Glassmorphic Light Cards
+   -------------------------------------------------------------------------- */
+.glass-panel-active {
+  background: var(--bg-card);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-active:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(99, 102, 241, 0.25);
+  box-shadow: 0 24px 55px -15px rgba(59, 130, 246, 0.12), 0 6px 16px rgba(0, 0, 0, 0.03);
+}
+
+/* Project Card Light */
+.project-card-light {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 10px 28px -10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.project-card-light:hover {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(59, 130, 246, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px -12px rgba(59, 130, 246, 0.15);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   Luminous News Anchor Highlight (Light Mode)
+   -------------------------------------------------------------------------- */
+.news-anchor-highlight {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.news-anchor-highlight.active-glow {
+  border-color: #2563eb !important;
+  background: rgba(239, 246, 255, 0.95) !important;
+  box-shadow: 0 0 28px rgba(37, 99, 235, 0.28) !important;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Chips Row Scroll & Intent Chips (Bottom Dock & Deep Dives)
+   -------------------------------------------------------------------------- */
+.chips-row-scroll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  overflow-x: auto;
+  padding: 4px 2px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.chips-row-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.intent-chip-vibrant {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(203, 213, 225, 0.85);
+  border-radius: 9999px;
+  padding: 7px 15px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #334155;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.intent-chip-vibrant:hover {
+  background: #ffffff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.15);
+}
+
+.intent-chip-vibrant:active {
+  transform: translateY(0);
+}
+
+/* Primary Action Button (Launch Live MVP) */
+.btn-primary-action {
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 9px 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px -4px rgba(37, 99, 235, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+}
+
+.btn-primary-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.55);
+}
+
+/* Handoff Toast */
+.handoff-toast-vibrant {
+  position: fixed;
+  top: 75px;
+  right: 24px;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  backdrop-filter: blur(20px);
+  padding: 10px 18px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: toast-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(-10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Bottom Dock */
+.bottom-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background: linear-gradient(to top, rgba(246, 248, 252, 0.98) 0%, rgba(246, 248, 252, 0.88) 75%, rgba(246, 248, 252, 0) 100%);
+  padding: 8px 16px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(226, 232, 240, 0.7);
+  pointer-events: none;
+}
+
+.bottom-dock > * {
+  pointer-events: auto;
+}
